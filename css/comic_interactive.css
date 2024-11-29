@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    justify-content: center;
+    align-items: center;
+    background-color:#232323;
+    color: #fff;
+}
+    */
+
+body {
+    background-color: black;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;   
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #f00);
+    border-radius: 6px;
+    transition: 0.15s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent,rgb(255,166,2));
+
+}
+
+.contaniner {
+    margin-top: -470px;
+    margin-left: -630px;
+    position: absolute;
+    cursor: pointer;
+}
+
+p {
+    color:white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    margin-left: 80px;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-name: flickering;
+    animation-timing-function: step-start;
+    overflow: hidden;
+
+}
+
+.background-video {
+    position: relative;
+    z-index: -1;
+    background: #000;
+    background-attachment: fixed;
+}
+
+
+.background-video video {
+    width:100%;
+    height: 100%;
+    background: #f5f5f7;
+    margin-top: -2px;
+}
+
+video {
+    object-fit:contain;
+    overflow: clip;
+    overflow-clip-margin: content-box;
+}
+
+.video-landing-content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    z-index:1;
+    font-family: 'Bebas Neue', cursive;
+}
+
+div {
+    display: block;
+}
+
+.video-landing-content h1 {
+    font-size: 100px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+
+    font-family: 'Bebas Neue', cursive;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-name: flickering;
+    animation-timing-function: step-start;
+    overflow: hidden;
+}
+
+
+@keyframes flickering {
+
+    0% {
+        color: #912914;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+
+    5% {
+        color: #912914;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+
+    10% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(-15deg);
+    }
+
+    15% {
+        color: #ccc;
+        text-shadow: none;
+        transform: skewX(-15deg);
+    }
+
+    20% {
+        color: #912914;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+
+    25% {
+        color: #ccc;
+        text-shadow: 2px 2px #912914;
+        transform: skewX(0);
+    }
+
+    30% {
+        color: #ccc;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+
+    68% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(0);
+    }
+
+    70% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(0);
+    }
+
+    75% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(10deg);
+    }
+
+    80% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(10deg);
+    }
+
+    85% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(10deg);
+    }
+
+    90% {
+        color: #912914;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+
+    95% {
+        color: #912914;
+        text-shadow: 1px 1px #eee;
+        transform: skewX(0);
+    }
+
+    100% {
+        color: #912914;
+        text-shadow: none;
+        transform: skewX(0);
+    }
+}
+
+    html, body {
+        overflow: overlay;
+    }
+
+    .text-center {
+        text-align: center!important;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+.box-1 {
+    margin-left: 800px;
+
+
+}
+
+.box-2 {
+    margin-left: 2080px;
+    margin-top: -450px;
+}
+
+.box-3 {
+    margin-left: 800px;
+    margin-top: -100px;
+}
+
+.back a{
+    width:200px;
+    height: 80px;
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 15px;
+    border: 1px solid #FF2F28;
+    color: #FF2F28;
+    font-size: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+.back a:hover {
+    background-color: #FF2F28;
+    color:#fff;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 5s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0); 
+}

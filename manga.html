@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómic Interactivo</title>
+  <link rel="stylesheet" href="manga.css">
+</head>
+<body>
+  <div class="comic-container">
+    <div class="comic-header">
+      <h2 id="comic-title">Cómic Interactivo</h2>
+      <p id="comic-chapter">Capítulo 1</p>
+      <p id="comic-author">Autor: Desconocido</p>
+    </div>
+
+    <div class="comic-navigation">
+      <button id="prev-chapter">Capítulo Anterior</button>
+      <button id="next-chapter">Capítulo Siguiente</button>
+      <button id="main-page"><a href = "lista_capitulos.html">Volver a la Página Principal</a></button>
+    </div>
+
+    <div class="comic-display">
+      <img id="comic-page" src="imagenes/page1.jpg" alt="Página del cómic">
+    </div>
+
+    <div class="zoom-controls">
+      <button id="zoom-in">Zoom +</button>
+      <button id="zoom-out">Zoom -</button>
+    </div>
+
+    <div class="comic-controls">
+      <button id="prev-btn">Anterior</button>
+      <button id="next-btn">Siguiente</button>
+    </div>
+
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <textarea id="comment-input" placeholder="Escribe un comentario..."></textarea>
+      <button id="submit-comment">Enviar</button>
+      <div id="comments-list">
+        <!-- Los comentarios se mostrarán aquí -->
+      </div>
+    </div>
+  </div>
+
+  <script src="manga.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Únete a la red social de Authors Heaven: comparte fotos, participa en foros, chatea con otros usuarios y colabora con autores y artistas. Una comunidad para creativos de habla hispana.">
+    <meta name="keywords" content="red social creativa, foros para artistas, chat para escritores, comunidad creativa, compartir fotos, colaboraciones artísticas">
+    <meta name="robots" content="index, follow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Authors Heaven - La plataforma de creatividad interactiva">
+    <meta property="og:description" content="Una plataforma única para leer, escribir y conectar. Encuentra historias increíbles, publica tu obra y colabora con talentos de Latinoamérica.">
+    <meta property="og:image" content="URL_de_tu_imagen_destacada">
+    <meta property="og:url" content="https://www.authorsheaven.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Authors Heaven - La plataforma de creatividad interactiva">
+    <meta name="twitter:description" content="Descubre historias únicas, publica tu creatividad y colabora con autores en Authors Heaven.">
+    <meta name="twitter:image" content="URL_de_tu_imagen_destacada">
+
+
+
+    <title>Red Social - Author's Haven</title>
+    <link rel="stylesheet" href="../css/red_social.css">
+</head>
+<body>
+    <!-- Menú igual al enviado -->
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="C:\Users\HP\OneDrive\Escritorio\sitio web proto\html\home.html" class="logo">Author's Haven</a>
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    <img src="C:\Users\HP\OneDrive\Escritorio\sitio web proto\imagenes\menu.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="C:\Users\HP\OneDrive\Escritorio\sitio web proto\html\home.html">Inicio</a></li>
+                        <li><a href="C:\Users\HP\OneDrive\Escritorio\sitio web proto\html\lector.html">Lector</a></li>
+                        <li><a href="C:\Users\HP\OneDrive\Escritorio\sitio web proto\html\Autor.html">Autor</a></li>
+                        <li><a href="C:\Users\HP\OneDrive\Escritorio\sitio web proto\html\red_social.html">Red Social</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la Red Social -->
+    <main>
+        <h1 class="titulo">Bienvenido a la Red Social</h1>
+
+        <!-- Sección de Foros -->
+        <section id="forum-section">
+            <h2>Foros</h2>
+            <form id="forum-form">
+                <input type="text" id="forum-title" placeholder="Título del tema" required>
+                <textarea id="forum-content" placeholder="Escribe aquí tu tema" required></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+            <ul id="forum-list"></ul>
+        </section>
+
+        <!-- Sección de Imágenes -->
+        <section id="image-section">
+            <h2>Sube tus imágenes</h2>
+            <form id="image-form">
+                <input type="file" id="image-upload" accept="image/*">
+                <button type="submit">Subir Imagen</button>
+            </form>
+            <div id="image-gallery"></div>
+        </section>
+
+        <!-- Chat Privado -->
+        <section id="chat-section">
+            <h2>Chat Privado</h2>
+            <div id="chat-box"></div>
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Escribe un mensaje" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="../scripts_JAVA/red_social.js"></script>
+</body>
+</html>

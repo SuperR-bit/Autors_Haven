@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manhwa Interactivo</title>
+  <link rel="stylesheet" href="Manhuaw.css">
+</head>
+<body>
+  <div class="manhwa-container">
+    <div class="manhwa-header">
+      <h1 id="manhwa-title">Manhwa Interactivo</h1>
+      <p id="manhwa-chapter">Capítulo 1</p>
+      <p id="manhwa-author">Autor: Desconocido</p>
+    </div>
+
+    <div class="manhwa-navigation">
+      <button id="prev-chapter">Capítulo Anterior</button>
+      <button id="next-chapter">Capítulo Siguiente</button>
+      <button id="main-page">Volver a la Página Principal</button>
+    </div>
+
+    <div class="manhwa-content" id="manhwa-content">
+      <!-- Las páginas del manhwa se insertarán aquí dinámicamente -->
+    </div>
+
+    <div class="zoom-controls">
+      <button id="zoom-in">Zoom +</button>
+      <button id="zoom-out">Zoom -</button>
+    </div>
+
+    <div class="comments-section">
+      <h3>Comentarios</h3>
+      <textarea id="comment-input" placeholder="Escribe un comentario..."></textarea>
+      <button id="submit-comment">Enviar</button>
+      <div id="comments-list">
+        <!-- Los comentarios se mostrarán aquí -->
+      </div>
+    </div>
+  </div>
+  <script src="Manhuaw.js"></script>
+</body>
+</html>

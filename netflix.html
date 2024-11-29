@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Capítulos</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #232323;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+            font-size: 2rem;
+            color: rgba(203, 18, 133, 1);
+        }
+
+        p {text-align: center;
+            margin: 20px;
+            font-size: 1rem;
+            color: rgba(203, 18, 133, 1);}
+
+        #chapter-list {
+            list-style-type: none;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #chapter-list li {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(203, 18, 133, 1) 0%, rgba(80, 49, 145, 1) 70%);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #chapter-list li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        #chapter-list li.read {
+            background: linear-gradient(90deg, rgba(80, 49, 145, 1) 0%, rgba(203, 18, 133, 1) 70%);
+        }
+
+        #chapter-list li span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #chapter-list li div {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgba(203, 18, 133, 0.8);
+            color: #000;
+        }
+
+        button:disabled {
+            background-color: #444;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        #main-menu {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: rgba(203, 18, 133, 1);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        #main-menu:hover {
+            background: rgba(80, 49, 145, 1);
+            transform: scale(1.05);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            #chapter-list li {
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 0.8rem;
+            }
+
+            #main-menu {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Capítulos</h1>
+    <p id="work-author">Autor: Desconocido</p>
+      <p id="work-status">Estado: En publicación</p>
+      <p id="work-year">Año de publicación: 2024</p>
+    <ul id="chapter-list"></ul>
+    <button id="main-menu">Menú Principal</button>
+
+    <script>
+        const chapters = [
+            { number: 1, title: "Introducción", type: "manga" },
+            { number: 2, title: "El misterio comienza", type: "Manhuaw" },
+            { number: 3, title: "La gran revelación", type: "libro" },
+            { number: 4, title: "El clímax", type: "manga" },
+            { number: 5, title: "El desenlace", type: "Manhuaw" },
+            { number: 6, title: "Epilogo 1", type: "libro" },
+            { number: 7, title: "Epilogo 2", type: "manga"},
+            { number: 8, title: "Epilogo 3", type: "Manhuaw" },
+            { number: 9, title: "Epilogo 4", type: "libro" },
+            { number: 10, title: "Epilogo 5", type: "manga" },
+        ];
+
+        const chapterList = document.getElementById("chapter-list");
+        const mainMenuButton = document.getElementById("main-menu");
+        const readChapters = JSON.parse(localStorage.getItem("readChapters")) || [];
+        const savedChapters = JSON.parse(localStorage.getItem("savedChapters")) || [];
+
+        function renderChapters() {
+            chapterList.innerHTML = "";
+
+            chapters.forEach(chapter => {
+                const listItem = document.createElement("li");
+                listItem.className = readChapters.includes(chapter.number) ? "read" : "";
+
+                const titleSpan = document.createElement("span");
+                titleSpan.textContent = `Capítulo ${chapter.number}: ${chapter.title}`;
+                listItem.appendChild(titleSpan);
+
+                const buttonsDiv = document.createElement("div");
+
+                const readButton = document.createElement("button");
+                readButton.textContent = "Marcar como leído";
+                readButton.onclick = () => markAsRead(chapter.number);
+                buttonsDiv.appendChild(readButton);
+
+                const saveButton = document.createElement("button");
+                saveButton.textContent = savedChapters.includes(chapter.number) ? "Guardado" : "Guardar";
+                saveButton.disabled = savedChapters.includes(chapter.number);
+                saveButton.onclick = () => saveChapter(chapter.number, saveButton);
+                buttonsDiv.appendChild(saveButton);
+
+                const enterButton = document.createElement("button");
+                enterButton.textContent = "Leer";
+                enterButton.onclick = () => enterChapter(chapter.number);
+                buttonsDiv.appendChild(enterButton);
+
+                listItem.appendChild(buttonsDiv);
+                chapterList.appendChild(listItem);
+            });
+        }
+
+        function markAsRead(chapterNumber) {
+            if (!readChapters.includes(chapterNumber)) {
+                readChapters.push(chapterNumber);
+                localStorage.setItem("readChapters", JSON.stringify(readChapters));
+                renderChapters();
+            }
+        }
+
+        function saveChapter(chapterNumber, button) {
+            if (!savedChapters.includes(chapterNumber)) {
+                savedChapters.push(chapterNumber);
+                localStorage.setItem("savedChapters", JSON.stringify(savedChapters));
+                button.textContent = "Guardado";
+                button.disabled = true;
+            }
+        }
+
+        function enterChapter(chapterNumber) {
+            const chapter = chapters.find(chap => chap.number === chapterNumber);
+            if (chapter) {
+                const url = `${chapter.type}.html?chapter=${chapter.number}`;
+                window.location.href = url;
+            } else {
+                alert("Capítulo no encontrado");
+            }
+        }
+
+        mainMenuButton.addEventListener("click", () => {
+            window.location.href = "index_l.html";
+        });
+
+        renderChapters();
+    </script>
+</body>
+</html>

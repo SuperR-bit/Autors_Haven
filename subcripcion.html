@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripción - Authors Heaven</title>
+    <link rel="stylesheet" href="subcripcion.css">
+</head>
+<body>
+    <header>
+        <h1>Authors Heaven</h1>
+        <p>¡Únete a nuestra comunidad creativa y disfruta de contenido único!</p>
+    </header>
+
+    <main>
+        <section class="subscription-form">
+            <h2>Suscríbete por solo $100 MXN trimestrales</h2>
+            <p>Accede a libros, cómics y herramientas interactivas exclusivas.</p>
+            
+            <form action="/process-subscription" method="POST">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="payment-method">Método de pago:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="tarjeta">Tarjeta de crédito/débito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="oxxo">OXXO</option>
+                </select>
+
+                <button type="submit">Suscribirme</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Authors Heaven. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

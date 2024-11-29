@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Desarrolla tu creatividad en Authors Heaven: escribe historias, dibuja cómics, aprende con tutoriales y gestiona tus proyectos en un solo lugar. Ideal para autores y artistas en crecimiento.">
+    <meta name="keywords" content="escribir historias, dibujar cómics, herramientas para autores, tutoriales de dibujo, gestión de proyectos, creatividad artística, autores emergentes">
+    <meta name="robots" content="index, follow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Authors Heaven - La plataforma de creatividad interactiva">
+    <meta property="og:description" content="Una plataforma única para leer, escribir y conectar. Encuentra historias increíbles, publica tu obra y colabora con talentos de Latinoamérica.">
+    <meta property="og:image" content="URL_de_tu_imagen_destacada">
+    <meta property="og:url" content="https://www.authorsheaven.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Authors Heaven - La plataforma de creatividad interactiva">
+    <meta name="twitter:description" content="Descubre historias únicas, publica tu creatividad y colabora con autores en Authors Heaven.">
+    <meta name="twitter:image" content="URL_de_tu_imagen_destacada">
+
+
+
+    <title>Autores - Author's Haven</title>
+    <link rel="stylesheet" href="../css/autor.css">
+
+
+
+
+
+</head>
+<body>
+    <!-- Menú principal -->
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="../html/home.html" class="logo">Author's Haven</a>
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    <img src="../imagenes/menu.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="../html/home.html">Inicio</a></li>
+                        <li><a href="../index_l.html">Lector</a></li>
+                        <li><a href="../html/autor.html">Autor</a></li>
+                        <li><a href="../html/red_social.html">Red Social</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú secundario -->
+    <section id="header2">
+        <ul class="nav2">
+            <li><a href="#archivos">Archivos</a></li>
+            <li><a href="#editor">Escribir</a></li>
+            <li><a href="#dibujo">Dibujar</a></li>
+            <li><a href="#tutoriales">Tutoriales</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+        </ul>
+    </section>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Carga de archivos -->
+        <section id="archivos">
+            <h2>Gestión de Archivos</h2>
+            <form id="upload-form">
+                <input type="file" id="file-upload" accept=".txt, .jpg, .png, .pdf">
+                <button type="submit">Subir Archivo</button>
+            </form>
+            <div id="uploaded-files">
+                <h3>Archivos Subidos:</h3>
+                <ul id="file-list"></ul>
+            </div>
+        </section>
+
+        <!-- Editor de texto -->
+        <section id="editor">
+            <h2>Escribe tu historia</h2>
+            <textarea id="text-editor" placeholder="Empieza a escribir aquí..."></textarea>
+            <button id="save-text">Guardar</button>
+        </section>
+
+        <!-- Herramienta de dibujo -->
+        <section id="dibujo">
+            <h2>Área de Dibujo</h2>
+            <canvas id="drawing-canvas" width="500" height="500"></canvas>
+            <div>
+                <button id="clear-drawing">Limpiar</button>
+                <button id="save-drawing">Guardar Dibujo</button>
+                <button id="advanced-drawing">Ir al Dibujo Avanzado</button>
+            </div>
+        </section>
+
+
+        <!-- Tutoriales -->
+        <section id="tutoriales">
+            <h2>Videos Tutoriales</h2>
+            <div class="video-gallery">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/example" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/example" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="proyectos">
+            <h2>Gestión de Proyectos</h2>
+            <p>Organiza tus archivos y recursos en proyectos.</p>
+            <form id="project-form">
+                <input type="text" placeholder="Nombre del proyecto">
+                <button type="submit">Crear Proyecto</button>
+            </form>
+            <ul id="project-list"></ul>
+        </section>
+    </main>
+
+    <script src="../scripts_JAVA/autor.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+body {
+  font-family: 'Bebas Neue', cursive;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #232323;
+}
+
+.comic-container {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 600px;
+}
+
+.comic-header {
+  margin-bottom: 10px;
+}
+
+.comic-navigation,
+.zoom-controls,
+.comic-controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.comic-display {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.comic-display img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain; /* Mantiene proporciones sin deformar */
+  border-radius: 8px;
+}
+
+button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3700b3;
+}
+
+.comments-section {
+  margin: 20px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#comment-input {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#submit-comment {
+  display: block;
+  margin: 0 auto;
+  background: #FF2F28;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#comments-list {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+a {
+  color:#fff
+}
